@@ -17,7 +17,3 @@
 - login admin role
 username = admin
 password = admin1234
-
-- login user role
-username = user
-password = user1234

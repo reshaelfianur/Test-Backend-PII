@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth;
+use App\Http\Controllers\Api\Employee;
 use App\Http\Controllers\Api\UserManagement\User;
 use App\Http\Controllers\Api\UserManagement\Role;
 use App\Http\Controllers\Api\TaskManagement\Task;
@@ -111,6 +112,16 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
             Route::delete('/destroy', [SubModule::class, 'destroy']);
         });
+    });
+
+    Route::prefix('employee')->group(function () {
+
+        Route::get('/index', [Employee::class, 'index']);
+        Route::get('/unique', [Employee::class, 'unique']);
+
+        Route::post('/store', [Employee::class, 'store']);
+
+        Route::put('/save', [Employee::class, 'save']);
     });
 
     Route::prefix('reference')->group(function () {

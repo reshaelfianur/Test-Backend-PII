@@ -18,7 +18,6 @@ Facilities table
 Work meeting table
 - wm_id
 - room_id
-- emp_id -> role Secreatary
 - wm_name
 - wm_description
 - wm_datetime_in
@@ -26,6 +25,9 @@ Work meeting table
 - wm_number_of_participants
 - wm_agreement_status
 - wm_agreement_note
+- created_by
+- updated_by
+- deleted_by
 
 Work meeting facility table
 - wm_id

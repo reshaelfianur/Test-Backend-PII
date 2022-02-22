@@ -56,13 +56,12 @@ class Employee extends Model
         return $this->hasOne(User::class, 'employee_id');
     }
 
-    public static function getListEmpName($args = array())
+    public static function fetch($args = [])
     {
         $i = new static;
 
         return self::select(
-            $i->table . '.employee_id',
-            $i->table . '.employee_code',
+            $i->table . '.*',
             DB::raw("CONCAT($i->table.employee_first_name, ' ', IFNULL($i->table.employee_last_name, '')) AS employee_full_name")
         )
             ->where($args)
